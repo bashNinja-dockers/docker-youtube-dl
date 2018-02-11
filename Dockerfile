@@ -5,4 +5,6 @@ RUN apk update --repository $EDGE_REPOSITORY \
 	&& apk add ffmpeg --repository $EDGE_REPOSITORY \
 	&& rm -rf /var/cache/apk/*
 RUN pip install youtube-dl
-ENTRYPOINT ['youtube-dl','-o','/src/%(title)s-%(id)s.%(ext)s']
+
+COPY entrypoint.sh /
+ENTRYPOINT ['entrypoint.sh']
