@@ -7,4 +7,4 @@ RUN apk update --repository $EDGE_REPOSITORY \
 RUN pip install youtube-dl
 
 COPY entrypoint.sh /
-ENTRYPOINT ['entrypoint.sh']
+ENTRYPOINT ['/entrypoint.sh']
