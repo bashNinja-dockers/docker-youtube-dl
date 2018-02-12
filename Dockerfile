@@ -8,4 +8,4 @@ RUN pip install youtube-dl
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["youtube-dl","-o","/src/%(title)s-%(id)s.%(ext)s"]
