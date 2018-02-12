@@ -1,2 +1,2 @@
 #!/bin/sh
-youtube-dl -o "/src/%(title)s-%(id)s.%(ext)s" $1
+youtube-dl -o "/src/%(title)s-%(id)s.%(ext)s" ${@:1}
